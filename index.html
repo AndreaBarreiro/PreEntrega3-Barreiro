@@ -5,24 +5,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".//style.css">
-    <title>Turnos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Lobster&family=Mali:wght@300;500;700&family=Unbounded:wght@200;500&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./fotos.img/estetoscopio (1).png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href=".//CSS/style.css">
+    <title>Turnos Pediatria</title>
+
 </head>
 
 <body>
-    <div>
-        <h1>Central de turnos</h1>
-        <h2>Primero debe registrarse</h2>
-        <h2>Haga click para buscar un turno</h2>
-        <p>Los dias de atencion son Lunes, Martes y Miercoles, de 14 a 18 hs. </p>
-        <a href=".//turnos.html">BUSCAR</a>
+    <header>
+        <div class="primeraParte">
+            <i class="imgCelu">1150503626</i>
+            <i>
+                <a class="imgMail" href="mailito:dra.PerezA@gmail.com" target="_blank">dra.PerezA@gmail.com</a>
+            </i>
+        </div>
+
+        <div class="segundaParte">
+            <div>
+                <img class="logo" src=".//fotos.img/logo.png" alt="imagen logo">
+            </div>
+
+            <div class="navegacion">
+                <nav>
+                    <ul>
+                        <li> <button id="showDireccion" type="button"
+                                class="btn btn-outline-secondary  btn-lg">DIRECCION</button>
+                        </li>
+                        <li> <button id="showHorarios" type="button"
+                                class="btn btn-outline-secondary  btn-lg">HORARIOS</button>
+                        </li>
+                        <li> <button id="showContacto" type="button"
+                                class="btn btn-outline-secondary  btn-lg">CONTACTO</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="navegacionDos">
+                <nav>
+                    <ul>
+                        <a href=".//portal.html">Portal Pacientes</a>
+                        <a href=".//turnos.html">Turnos Online</a>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+        <div class="hero">
+            <img src=".//fotos.img/11111.jpg" alt="foto consultorio">
+            <img src=".//fotos.img/33333.jpg" alt="foto pediatra">
+            <img src=".//fotos.img/22222.jpg" alt="foto sala de espera">
+
+
+        </div>
+
+        <div class="titulo">
+            <h1>NOVEDADES</h1>
+        </div>
+
+        <div class="segundaSeccion">
+            <div>
+                <h2>Plan de Vacunacion</h2>
+                <a target="_blank" href="https://www.gba.gob.ar/vacunacion/"><img class="fotoVacunacion"
+                        src=".//fotos.img/planvacunacion.png" alt="calendario de vacunacion obligatoria"></a>
+            </div>
+
+            <div>
+                <h2>Comunicado de Prensa</h2>
+                <a Target="_blank"
+                    href="https://www.argentina.gob.ar/noticias/el-ministerio-de-salud-unicef-y-la-sociedad-argentina-de-pediatria-llaman-sumarse-la">
+                    <img src=".//fotos.img/Screenshot (689).png" alt="foto de comunicado de prensa"> </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./JavaScript/script.js"></script>
+
+</body>
+
+<footer>
+    <div class=" final">
+        <img src=".//fotos.img/logo.png" alt="Logo">
+        <i class="imgCelu">1150503626</i>
+        <i>
+            <a class="imgMail" href="mailito:dra.PerezA@gmail.com" target="_blank">dra.PerezA@gmail.com</a>
+        </i>
     </div>
 
-    <div>
-        <h2>Si desea registrar un familiar haga click en el siguiente enlace</h2>
-        <a href=".//familiar.html">Nuevo Ingreso</a>
-    </div>
-    <script src=".//script.js"></script>
-</body>
+</footer>
 
 </html>

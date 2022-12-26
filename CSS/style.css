@@ -1,0 +1,212 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /** reset para REMS- 62.5% = 10px de 16px **/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    font-family: Unbounded;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Unbounded', cursive;
+    font-weight: 500;
+}
+
+
+
+/*.........Pag Principal.........*/
+header {
+    background-image: url(../fotos.img/lilac-and-pink-seamless-children-s-background-with-children-s-doodle-illustrations-of-a-bird-a-contoured-flower-a-twig-a-cheerful-sun-endless-pattern-for-children-s-room-textiles-vector.jpg);
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.primeraParte {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5rem;
+    margin-left: 2rem;
+}
+
+i {
+    font-family: 'Unbounded', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.imgCelu::before {
+    content: url(../fotos.img/telefono.png);
+}
+
+.segundaParte {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3rem;
+}
+
+.imgMail::before {
+    content: url(../fotos.img/correo.png);
+}
+
+.navegacion nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style-type: none;
+}
+
+.navegacionDos {
+    font-family: 'Unbounded', cursive;
+    font-size: 1rem;
+}
+
+.navegacionDos nav ul a {
+    background: rgba(43, 18, 63, 0.705);
+    color: aliceblue;
+    border: outset;
+    border-radius: 5%;
+    padding: 1.4rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding-bottom: 0.9rem;
+}
+
+.navegacionDos nav ul a:hover {
+    font-size: 1.4rem;
+}
+
+.logo {
+    box-shadow: 11px -19px 16px 1px rgba(0, 0, 0, 0.72);
+    -webkit-box-shadow: 11px -19px 16px 1px rgba(0, 0, 0, 0.72);
+    -moz-box-shadow: 11px -19px 16px 1px rgba(0, 0, 0, 0.72);
+    border-radius: 10%;
+    margin-left: 10rem;
+}
+
+.hero {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    background-image: url(../fotos.img/fondoparahero.jpg);
+    padding: 1.5rem 0 2rem 0;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.segundaSeccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+
+}
+
+h2 {
+    text-decoration: overline;
+}
+
+
+/*......Footer........*/
+footer {
+    background-color: rgb(211, 180, 185);
+}
+
+.final {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+/*.....Portal Pacientes......*/
+.form-control {
+    width: 50%;
+}
+
+.form {
+    display: grid;
+    grid-template-rows: 3 1fr;
+    margin-left: 27rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    margin-top: 2rem;
+    font-weight: 600;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+}
+
+.enlaceRegistro {
+    font-family: 'Unbounded', cursive;
+    font-size: 1rem;
+    background: rgba(43, 18, 63, 0.479);
+    color: black;
+    border: outset;
+    border-radius: 5%;
+    padding: 1.4rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding-bottom: 0.9rem;
+    display: table;
+    margin-top: 2rem;
+}
+
+a:hover {
+    color: bisque;
+    font-size: 1.4rem;
+}
+
+/*.........Registro..........*/
+
+.formReg {
+    display: flex;
+    justify-content: center;
+    color: rgba(82, 67, 67, 0.753);
+    width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+.fondoReg {
+    background-image: url(../fotos.img/lilac-pastel-abstract-background-free-vector.jpg);
+    opacity: 0.7;
+}
+
+input {
+    font-family: system-ui;
+    font-size: 1.6rem;
+    border-radius: 5%;
+    margin: 0.5rem;
+}
+
+label {
+    font-family: 'Unbounded';
+    font-size: 1.4rem;
+}
+
+
+
+
+/*.........Turnos............*/
