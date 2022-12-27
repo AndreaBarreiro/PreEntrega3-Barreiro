@@ -3,7 +3,7 @@
 let arrPacientes = [];
 
 class Paciente {
-    constructor(nombreyApellido, dni, edad, obraSocial, telefono, email) {
+    constructor(nombreyApellido, dni, edad, obraSocial, telefono, email, password) {
 
         this.nombreyApellido = nombreyApellido;
         this.dni = dni;
@@ -11,34 +11,55 @@ class Paciente {
         this.obraSocial = obraSocial;
         this.telefono = telefono;
         this.email = email;
+        this.password = password;
     }
 }
 
+let formReg = document.getElementById("formReg");
+
+
 function registrarse() {
 
-    let nombreyApellido = document.getElementById("nombreyApellido").value; //no me muestra nada, con o sin value
-    let dni = document.getElementById("dni");
-    let obraSocial = document.getElementById("obraSocial");
-    let telefono = document.getElementById("telefono");
-    let email = document.getElementById("email");
+    let nombreyApellido = document.getElementById("nombreyApellido").value;
+    let dni = document.getElementById("dni").value;
+    let edad = document.getElementById("edad").value;
+    let obraSocial = document.getElementById("obraSocial").value;
+    let telefono = document.getElementById("telefono").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-    if ((nombreyApellido !== "") && (dni !== "") && (edad !== "") && (obraSocial !== "")(telefono !== "") && (email !== "")) {
-        alert("su registro se realizo correctamente");
+
+
+    if ((nombreyApellido !== "") && (dni !== "") && (edad !== "") && (obraSocial !== "") && (telefono !== "") && (email !== "") && (password !== "")) {
+        alert("su registro se realizo correctamente. Acceda desde el portal de Pacientes a su cuenta");
     } else {
         alert("Ingrese todos los datos");
     }
 
-    arrPacientes.push(new Paciente(nombreyApellido, dni, obraSocial, telefono, email));
+    arrPacientes.push(new Paciente(nombreyApellido, dni, edad, obraSocial, telefono, email, password));
+    localStorage.setItem("PacientesTotales", JSON.stringify(arrPacientes));
+    console.log(arrPacientes);
 };
 
 
-let botonRegistrarme = document.getElementById("btnRegistrarme").addEventListener("click", registrarse);
 
-localStorage.setItem("Paciente1", arrPacientes);
+formReg.addEventListener("submit", (e) => {
+    e.preventDefault()
+    registrarse()
+    formReg.reset()
+})
+
+//.......Portal Pacientes.........//
 
 
 
-console.log(arrPacientes); //me muestra el array vacio aunque ingrese datos a mi formulario
+//........Turnos................//
+let encabezado = document.createElement("h3");
+encabezado.innerHTML = "<p>Los dias de atencion son Lunes, Miercoles y Viernes</p>";
+document.body.append(encabezado);
+
+
+
 
 
 
