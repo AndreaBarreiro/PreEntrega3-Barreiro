@@ -101,7 +101,7 @@ a {
     justify-content: end;
     gap: 0.5rem;
     background-image: url(../fotos.img/fondoparahero.jpg);
-    padding: 1.5rem 0 2rem 0;
+    padding: 1.5rem 0.3rem 5rem 0;
 }
 
 .titulo {
@@ -181,7 +181,6 @@ a:hover {
 .formReg {
     display: flex;
     justify-content: center;
-    color: rgba(82, 67, 67, 0.753);
     width: 600px;
     margin: 0 auto;
     padding: 1em;
@@ -210,7 +209,39 @@ label {
     font-size: 1.6rem;
 }
 
+.formulario__mensaje-error {
+    height: 45px;
+    padding: 0 1.5rem;
+    border-radius: 3px;
+    background-color: rgba(141, 35, 35, 0.89);
+    font-size: 1.5rem;
+    display: none;
+}
 
+.formulario__mensaje-error-activo {
+    display: block;
+}
+
+.formulario__mensaje-exito {
+    font-size: 1.4rem;
+    color: rgb(21, 146, 21);
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+    
+}
+
+.formulario__mensaje-password {
+    color: rgb(68, 48, 48);
+    font-weight: 500;
+}
+
+.formulario__mensaje-password-activo {
+    color:rgba(0, 0, 0, 0.72);
+    background-color: rgb(207, 81, 81);
+}
 
 
 /*.........Turnos............*/
