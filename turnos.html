@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Lobster&family=Mali:wght@300;500;700&family=Unbounded:wght@200;500&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="./fotos.img/turno-nocturno.png" type="image/x-icon">
+    <link rel="stylesheet" href=".//CSS/calendario.css">
     <link rel="stylesheet" href=".//CSS/style.css">
     <title>Turnos</title>
 </head>
@@ -26,7 +27,7 @@
 
         <div class="segundaParte">
             <div>
-                <img class="logo" src="./fotos.img/logo.png" alt="imagen logo">
+                <a href="./index.html"> <img class="logo" src="./fotos.img/logo.png" alt="imagen logo"></a>
             </div>
 
             <div class="navegacionDos">
@@ -42,12 +43,65 @@
     </header>
 
     <main>
-        <h1>Turnos</h1>
+        <h1 class="title">Turnos</h1>
+
+        <form name="elFormulario" action="" method="get">
+            <table>
+              <caption>
+                <select id="losDias" name="losDias" onchange="dia=this.value; inicia()"></select>
+                <select id="losMeses" name="losMeses" onchange="mes=this.value; inicia()">
+                  <option value=0>Enero</option>
+                  <option value=1>Febrero</option>
+                  <option value=2>Marzo</option>
+                  <option value=3>Abril</option>
+                  <option value=4>Mayo</option>
+                  <option value=5>Junio</option>
+                  <option value=6>Julio</option>
+                  <option value=7>Agosto</option>
+                  <option value=8>Septiembre</option>
+                  <option value=9>Octubre</option>
+                  <option value=10>Noviembre</option>
+                  <option value=11>Diciembre</option>
+                </select>
+                <select id="losAnios" name="losAnios" onchange="anio=this.value; inicia()">
+                  <option>2023</option>
+                </select>
+              </caption>
+              <thead>
+                <tr>
+                  <th>D</th>
+                  <th>L</th>
+                  <th>M</th>
+                  <th>M</th>
+                  <th>J</th>
+                  <th>V</th>
+                  <th>S</th>
+                </tr>
+              </thead>
+              <tbody id="hoja"></tbody>
+            </table>
+          
+            <input class="inputTurnos" type="submit" value="Enviar">
+          </form>
+
     </main>
 
+<script src="./JavaScript/turnos.js"></script>
+<script src="dist/js/datepicker.min.js"></script>
+<script src="dist/js/locales/fr.min.js"></script>
 
 
-        <script src="./JavaScript/registro.js"></script>
+<footer>
+    <div class=" final">
+        <img src="./fotos.img/logo.png" alt="Logo">
+        <i class="imgCelu">1150503626</i>
+        <i>
+            <a class="imgMail" href="mailito:dra.PerezA@gmail.com" target="_blank">dra.PerezA@gmail.com</a>
+        </i>
+    </div>
+
+</footer>
+
 </body>
 
 </html>

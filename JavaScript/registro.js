@@ -39,16 +39,30 @@ function registrarse() {
     telefono !== "" &&
     email !== ""
   ) {
+    arrPacientes.push(
+      new Paciente(
+        nombreyApellido,
+        dni,
+        edad,
+        obraSocial,
+        telefono,
+        email,
+        password
+      )
+    );
+    localStorage.setItem("PacientesTotales", JSON.stringify(arrPacientes));
+    console.log(arrPacientes);
+
     Swal.fire({
-      title: "Datos ingresados correctamente",
-      showClass: {
-        popup: "animate__animated animate__fadeInDown",
-      },
-      hideClass: {
-        popup: "animate__animated animate__fadeOutUp",
-      },
+      title: "<strong>Datos ingresados correctamente.</strong>",
+      icon: "info",
+      html: "Revise que su <b>CONTRASEÑA</b>, " + "cumple con los requisitos",
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Genial!',
+      confirmButtonAriaLabel: "Thumbs up, great!",
     });
-    //alert("su registro se realizo correctamente. Acceda desde el portal de Pacientes a su cuenta");
+    //ingreso correcto
   } else {
     Swal.fire({
       icon: "error",
@@ -56,46 +70,28 @@ function registrarse() {
       text: "Debe ingresar todos los campos!",
       footer: "<complete todos los datos</a>",
     });
-    //alert("Ingrese todos los datos");
+    //error al ingresar los datos
   }
-
-  arrPacientes.push(
-    new Paciente(
-      nombreyApellido,
-      dni,
-      edad,
-      obraSocial,
-      telefono,
-      email,
-      password
-    )
-  );
-  localStorage.setItem("PacientesTotales", JSON.stringify(arrPacientes));
-  console.log(arrPacientes);
 }
 
 const formReg = document.getElementById("formReg");
 const inputs = document.querySelectorAll("#formReg input");
 
 const expresiones = {
-  password: /^.{6,10}$/ //6 a 10 digitos
+  password: /^.{6,10}$/, //6 a 10 digitos
 };
 
-const campos = {
-  password: false,
-};
-
-const ValidarFormulario = (e) => {
+const validarFormulario = (e) => {
   switch (e.target.name) {
     case "password":
       if (expresiones.password.test(e.target.value)) {
         document
-          .querySelector("grupo__password .formulario__mensaje-password")
+          .querySelector("#grupo__password")
           .classList.remove("formulario__mensaje-password-activo");
         campos["password"] = true;
       } else {
         document
-          .querySelector("#grupo__password .formulario__mensaje-password")
+          .querySelector("#grupo__password")
           .classList.add("formulario__mensaje-password-activo");
         campos["password"] = false;
       }
@@ -103,9 +99,13 @@ const ValidarFormulario = (e) => {
   }
 };
 
+const campos = {
+  password: false,
+};
+
 inputs.forEach((input) => {
-  input.addEventListener("keyup", ValidarFormulario);
-  input.addEventListener("blur", ValidarFormulario);
+  input.addEventListener("keyup", validarFormulario);
+  input.addEventListener("blur", validarFormulario);
 });
 
 formReg.addEventListener("submit", (e) => {
@@ -121,14 +121,31 @@ formReg.addEventListener("submit", (e) => {
       document
         .getElementById("formulario__mensaje-exito")
         .classList.remove("formulario__mensaje-exito-activo");
-    }, 4000);
+    }, 5000);
   }
 });
-
-//.......Portal Pacientes.........//
 
 //........Turnos................//
 let encabezado = document.createElement("h3");
 encabezado.innerHTML =
-  "<p>Los dias de atencion son Lunes, Miercoles y Viernes</p>";
+  "<p>Los campos Nombre y Apellido, DNI, edad y Obra Social deben ser del paciente menor de edad.- 🧸</p>";
 document.body.append(encabezado);
+
+//...........Ingreso al Portal...........//
+
+let usuario = document.getElementById("emailLog");
+let contraseña = document.getElementById("passLog");
+const login = document.getElementById("btn-ingresar");
+let invalido = ""; // clase de CSS
+
+login.addEventListener("click", () => {
+  mostrarPacientesTotales();
+});
+
+function mostrarPacientesTotales() {
+  if (usuario === email && contraseña === password) {
+    window.location.href = "../ingresoPortal.html";
+  } else {
+    invalido += "el Usuario no existe <br>";
+  }
+}

@@ -241,7 +241,19 @@ label {
 .formulario__mensaje-password-activo {
     color:rgba(0, 0, 0, 0.72);
     background-color: rgb(207, 81, 81);
+    size: 3rem;
 }
 
 
-/*.........Turnos............*/
+/*.........Portal...........*/
+.invalido{
+    color:#790000;
+    background-color:#f9f1f1;
+    border-top: 1px solid #C89797;
+    border-bottom: 1px solid #C89797;
+}
+
+.input-invalido{
+    border: 1px solid #790000;
+}
+
