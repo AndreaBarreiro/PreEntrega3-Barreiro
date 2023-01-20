@@ -45,7 +45,7 @@
     <main>
         <h1 class="title">Turnos</h1>
 
-        <form name="elFormulario" action="" method="get">
+        <form id="elFormulario" name="elFormulario" action="" method="get">
             <table>
               <caption>
                 <select id="losDias" name="losDias" onchange="dia=this.value; inicia()"></select>
@@ -81,14 +81,15 @@
               <tbody id="hoja"></tbody>
             </table>
           
-            <input class="inputTurnos" type="submit" value="Enviar">
+            <input id="inputTurnos" class="inputTurnos" type="submit" value="Enviar">
           </form>
 
     </main>
 
-<script src="./JavaScript/turnos.js"></script>
-<script src="dist/js/datepicker.min.js"></script>
-<script src="dist/js/locales/fr.min.js"></script>
+    <h2>Turno asignado:</h2>
+    <br /><br />
+    <button id="verTurnos">VER TURNO</button>
+    <div id="contenedorTurnos"></div>
 
 
 <footer>
@@ -101,6 +102,8 @@
     </div>
 
 </footer>
+
+<script src="./JavaScript/turnos.js"></script>
 
 </body>
 

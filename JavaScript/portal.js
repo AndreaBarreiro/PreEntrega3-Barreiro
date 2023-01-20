@@ -1,8 +1,6 @@
-
 // function inicio() {
 //     $("#btn-ingresar").click(check);
 // }
-
 
 // function check() {
 //   checkUser();
@@ -51,7 +49,7 @@
 //                 'Authorization': 'Basic ' + btoa(username + password)
 //             },
 //             success: function (exito) {
-//             url: '../ingresoPortal.html'  //a donde iria  
+//             url: '../ingresoPortal.html'  //a donde iria
 //             },
 //             complete: function (jqXHR) {
 //                 if (jqXHR.status === '401') {
@@ -63,8 +61,6 @@
 //         });
 //     }
 // }
-
-
 
 //const inputsPortal = document.querySelectorAll("#form input");
 
@@ -87,5 +83,6 @@
 //   }
 // };
 
+//...........Ingreso al Portal...........//
 
 

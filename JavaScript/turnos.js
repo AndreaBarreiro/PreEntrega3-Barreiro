@@ -37,3 +37,46 @@ document.querySelectorAll("#hoja td")[(dia-1)+semana].className = "destaca";
 }
 
 onload = inicia; 
+
+//....Tarjeta de turnos......//
+
+const guardarTurnos = [];
+class Turno { constructor (dia) {this.dia = dia}  }
+
+elFormulario.addEventListener('submit', (e) => {
+  //e.preventDefault();
+  agregarTurno();
+});
+
+  function agregarTurno() {
+    const dia = document.getElementById("hoja").value;
+
+    const nuevoTurno = new Turno (dia);
+    guardarTurnos.push(nuevoTurno);
+    //Agrego al LocalStorage:
+    localStorage.setItem('guardarTurnos', JSON.stringify(guardarTurnos));
+    formulario.reset();
+  }
+
+  const contenedorTurnos = document.getElementById('contenedorTurnos');
+
+const verTurnos = document.getElementById('inputTurnos');
+
+verTurnos.addEventListener('click', () => {
+  mostrarTurnos();
+});
+
+function mostrarTurnos() {
+  contenedorTurnos.innerHTML = '';
+  guardarTurnos.forEach((verTurnos) => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+                      <div>
+                      <h1>hola</h1>
+                          <p>Dia: ${verTurnos.hoja.destaca}</p>
+                      </div>
+      
+                      `;
+    contenedorReservas.appendChild(div);
+  });
+}

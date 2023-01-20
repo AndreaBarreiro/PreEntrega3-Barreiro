@@ -125,13 +125,12 @@ formReg.addEventListener("submit", (e) => {
   }
 });
 
-//........Turnos................//
+//........Turnos Nota................//
 let encabezado = document.createElement("h3");
 encabezado.innerHTML =
   "<p>Los campos Nombre y Apellido, DNI, edad y Obra Social deben ser del paciente menor de edad.- 🧸</p>";
 document.body.append(encabezado);
 
-//...........Ingreso al Portal...........//
 
 let usuario = document.getElementById("emailLog");
 let contraseña = document.getElementById("passLog");
@@ -143,9 +142,40 @@ login.addEventListener("click", () => {
 });
 
 function mostrarPacientesTotales() {
-  if (usuario === email && contraseña === password) {
-    window.location.href = "../ingresoPortal.html";
+  const usuarios = JSON.parse(localStorage.getItem("PacientesTotales"));
+  console.log(usuarios);
+
+  const paciente = usuarios.find((u) => u.email === usuario.value);
+  console.log(paciente);
+
+  if (
+    usuario.value === paciente.email &&
+    contraseña.value === paciente.password
+  ) {
+    window.location.href = "../turnos.html";
   } else {
     invalido += "el Usuario no existe <br>";
   }
-}
+};
+
+
+//.....llamado API.........//
+
+fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'GET',
+        body: JSON.stringify({
+            title: 'usuarios',
+            body: 'Post de prueba',
+            userId: 1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => { 
+      console.log(data[0].title)
+      console.log(data[0].body)
+    });
+    
+
