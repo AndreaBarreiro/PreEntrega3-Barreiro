@@ -49,7 +49,7 @@ elFormulario.addEventListener('submit', (e) => {
 });
 
   function agregarTurno() {
-    const dia = document.getElementById("hoja").value;
+    const dia = document.getElementById("elFormulario").value;
 
     const nuevoTurno = new Turno (dia);
     guardarTurnos.push(nuevoTurno);
