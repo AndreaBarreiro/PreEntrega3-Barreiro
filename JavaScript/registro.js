@@ -51,7 +51,6 @@ function registrarse() {
       )
     );
     localStorage.setItem("PacientesTotales", JSON.stringify(arrPacientes));
-    console.log(arrPacientes);
 
     Swal.fire({
       title: "<strong>Datos ingresados correctamente.</strong>",
@@ -73,7 +72,6 @@ function registrarse() {
     //error al ingresar los datos
   }
 }
-
 const formReg = document.getElementById("formReg");
 const inputs = document.querySelectorAll("#formReg input");
 
@@ -108,22 +106,23 @@ inputs.forEach((input) => {
   input.addEventListener("blur", validarFormulario);
 });
 
-formReg.addEventListener("submit", (e) => {
-  e.preventDefault();
-  registrarse();
+if (formReg)
+  formReg.addEventListener("submit", (e) => {
+    e.preventDefault();
+    registrarse();
 
-  if (campos.password) {
-    formReg.reset();
-    document
-      .getElementById("formulario__mensaje-exito")
-      .classList.add("formulario__mensaje-exito-activo");
-    setTimeout(() => {
+    if (campos.password) {
+      formReg.reset();
       document
         .getElementById("formulario__mensaje-exito")
-        .classList.remove("formulario__mensaje-exito-activo");
-    }, 5000);
-  }
-});
+        .classList.add("formulario__mensaje-exito-activo");
+      setTimeout(() => {
+        document
+          .getElementById("formulario__mensaje-exito")
+          .classList.remove("formulario__mensaje-exito-activo");
+      }, 5000);
+    }
+  });
 
 //........Turnos Nota................//
 let encabezado = document.createElement("h3");
@@ -131,6 +130,7 @@ encabezado.innerHTML =
   "<p>Los campos Nombre y Apellido, DNI, edad y Obra Social deben ser del paciente menor de edad.- 🧸</p>";
 document.body.append(encabezado);
 
+//.........Login.............//
 
 let usuario = document.getElementById("emailLog");
 let contraseña = document.getElementById("passLog");
@@ -143,10 +143,10 @@ login.addEventListener("click", () => {
 
 function mostrarPacientesTotales() {
   const usuarios = JSON.parse(localStorage.getItem("PacientesTotales"));
-  console.log(usuarios);
+  
 
   const paciente = usuarios.find((u) => u.email === usuario.value);
-  console.log(paciente);
+  
 
   if (
     usuario.value === paciente.email &&
@@ -156,8 +156,7 @@ function mostrarPacientesTotales() {
   } else {
     invalido += "el Usuario no existe <br>";
   }
-};
-
+}
 
 //.....llamado API.........//
 
@@ -173,9 +172,7 @@ fetch('https://jsonplaceholder.typicode.com/users', {
         },
     })
     .then((response) => response.json())
-    .then((data) => { 
+    .then((data) => {
       console.log(data[0].title)
       console.log(data[0].body)
     });
-    
-

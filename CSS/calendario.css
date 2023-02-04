@@ -32,6 +32,10 @@ body {
     background-color: black !important; 
     }
 
+    .lastDays {
+        opacity: .3;
+    }
+
     .inputTurnos {
         font-family: 'Unbounded';
         font-size: 1.8rem;

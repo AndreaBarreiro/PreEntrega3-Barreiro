@@ -41,28 +41,31 @@ onload = inicia;
 //....Tarjeta de turnos......//
 
 const guardarTurnos = [];
-class Turno { constructor (dia) {this.dia = dia}  }
+class Turno { 
+  constructor (dia) {
+    this.dia = dia,
+    this.mes = mes
+  }}
 
 elFormulario.addEventListener('submit', (e) => {
-  //e.preventDefault();
+  e.preventDefault();
   agregarTurno();
 });
 
   function agregarTurno() {
-    const dia = document.getElementById("elFormulario").value;
+    const dia = document.getElementsByClassName("destaca").value;
+    
 
     const nuevoTurno = new Turno (dia);
     guardarTurnos.push(nuevoTurno);
     //Agrego al LocalStorage:
     localStorage.setItem('guardarTurnos', JSON.stringify(guardarTurnos));
-    formulario.reset();
+    //formulario.reset();
   }
-
-  const contenedorTurnos = document.getElementById('contenedorTurnos');
 
 const verTurnos = document.getElementById('inputTurnos');
 
-verTurnos.addEventListener('click', () => {
+verTurnos.addEventListener('submit', () => {
   mostrarTurnos();
 });
 
@@ -73,10 +76,10 @@ function mostrarTurnos() {
     div.innerHTML = `
                       <div>
                       <h1>hola</h1>
-                          <p>Dia: ${verTurnos.hoja.destaca}</p>
+                          <p>Dia: ${verTurnos}</p>
                       </div>
-      
                       `;
-    contenedorReservas.appendChild(div);
+    contenedorTurnos.appendChild(div);
   });
 }
+

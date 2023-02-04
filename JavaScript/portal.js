@@ -49,7 +49,7 @@
 //                 'Authorization': 'Basic ' + btoa(username + password)
 //             },
 //             success: function (exito) {
-//             url: '../ingresoPortal.html'  //a donde iria
+//             url: '../turnos.html'  //a donde iria
 //             },
 //             complete: function (jqXHR) {
 //                 if (jqXHR.status === '401') {
@@ -62,7 +62,7 @@
 //     }
 // }
 
-//const inputsPortal = document.querySelectorAll("#form input");
+// const inputsPortal = document.querySelectorAll("#form input");
 
 // inputsPortal.forEach((input) => {
 //   input.addEventListener("keyup", checkUser);
@@ -77,7 +77,7 @@
 //   }
 
 //   if (clave == true) {
-//     location.href = "../ingresoPortal.html";
+//     location.href = "../turnos.html";
 //   } else {
 //     alert("Datos Incorrectos");
 //   }
