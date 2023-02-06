@@ -50,11 +50,11 @@ class Turno {
 elFormulario.addEventListener('submit', (e) => {
   e.preventDefault();
   agregarTurno();
+  mostrarTurnos();
 });
 
   function agregarTurno() {
-    const dia = document.getElementsByClassName("destaca").value;
-    
+    const dia = document.getElementsByClassName('destaca').value;    
 
     const nuevoTurno = new Turno (dia);
     guardarTurnos.push(nuevoTurno);
@@ -69,17 +69,17 @@ verTurnos.addEventListener('submit', () => {
   mostrarTurnos();
 });
 
+
 function mostrarTurnos() {
   contenedorTurnos.innerHTML = '';
-  guardarTurnos.forEach((verTurnos) => {
     const div = document.createElement('div');
     div.innerHTML = `
                       <div>
-                      <h1>hola</h1>
-                          <p>Dia: ${verTurnos}</p>
+                      <h2>Dia: ${dia} del corriente mes</h2>
                       </div>
                       `;
     contenedorTurnos.appendChild(div);
-  });
+  ;
 }
+ //ver porque no funciona!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

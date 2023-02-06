@@ -137,16 +137,15 @@ let contraseña = document.getElementById("passLog");
 const login = document.getElementById("btn-ingresar");
 let invalido = ""; // clase de CSS
 
-login.addEventListener("click", () => {
-  mostrarPacientesTotales();
-});
+if (login)
+  login.addEventListener("click", () => {
+    mostrarPacientesTotales();
+  });
 
 function mostrarPacientesTotales() {
   const usuarios = JSON.parse(localStorage.getItem("PacientesTotales"));
-  
 
   const paciente = usuarios.find((u) => u.email === usuario.value);
-  
 
   if (
     usuario.value === paciente.email &&
@@ -158,21 +157,3 @@ function mostrarPacientesTotales() {
   }
 }
 
-//.....llamado API.........//
-
-fetch('https://jsonplaceholder.typicode.com/users', {
-        method: 'GET',
-        body: JSON.stringify({
-            title: 'usuarios',
-            body: 'Post de prueba',
-            userId: 1,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data[0].title)
-      console.log(data[0].body)
-    });

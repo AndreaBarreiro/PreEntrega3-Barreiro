@@ -257,3 +257,8 @@ label {
     border: 1px solid #790000;
 }
 
+/*.......Pacientes..........*/
+table thead {
+    background-color: rgb(139, 71, 139);
+    color: white;
+}
