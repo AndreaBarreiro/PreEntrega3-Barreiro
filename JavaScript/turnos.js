@@ -81,5 +81,5 @@ function mostrarTurnos() {
     contenedorTurnos.appendChild(div);
   ;
 }
- //ver porque no funciona!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
 
